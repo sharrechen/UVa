@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <algorithm>
 #include <cstdlib>
 using namespace std;
@@ -8,7 +8,7 @@ int main(void) {
 	int a, b, begin, end, maxclen, clength;
 	unsigned long long n;
 
-	while (cin >> a >> b) {
+	while (scanf("%d %d", &a, &b)!= EOF) {
 		begin = a;
 		end = b;
 		if (end < begin) swap(begin, end);
@@ -27,6 +27,6 @@ int main(void) {
 			maxclen = max( maxclen, clength);
 			
 		}
-		cout << a << " " << b << " " << maxclen <<endl; 
+		printf("%d %d %d\n", a, b, maxclen); 
 	}
 }
