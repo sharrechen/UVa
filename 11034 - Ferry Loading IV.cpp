@@ -25,7 +25,7 @@ int main(void) {
         l *= 100; // transfer m to cm
         queue<int> left_cars;
         queue<int> right_cars;
-        for (size_t i = 0; i < m; ++i) {
+        while (m--) {
             int length;
             string bank;
             cin >> length >> bank;
