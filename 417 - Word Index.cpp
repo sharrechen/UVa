@@ -21,7 +21,6 @@ void combination(vector<char> & alphabet, map<string, int> & words, int m, int n
 int main(void) {
     vector<char> alphabet;
     map<string, int> words;
-    map<string, int>::iterator wtr;
     
     for (char c = 'a'; c <= 'z'; ++c) {
         alphabet.push_back(c);
@@ -34,12 +33,7 @@ int main(void) {
 
     string s;
     while (cin >> s) {
-        wtr = words.find(s);
-        if (wtr != words.end()) {
-            cout << wtr->second << endl;
-        } else {
-            cout << 0 << endl;
-        }
+        cout << words[s] << endl;
     }
 
     return 0;
