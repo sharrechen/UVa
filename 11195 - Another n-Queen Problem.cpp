@@ -10,11 +10,11 @@ void queensChess(vector<int> & board, int & rw, int & ld, int & rd, int & sol, i
 
     for (int r = 0; r < board.size(); ++r) {
         if (board[c] & (1 << r) && !(rw & 1 << r) && !(ld & (1 << (r - c + board.size() - 1))) && !(rd & (1 << (r + c))) ) {
-            rw |= 1 << r;
-            ld |= 1 << (r - c + board.size() - 1);
+            rw |= 1 << r; // record if queen place at this row
+            ld |= 1 << (r - c + board.size() - 1); // record queen use this left diagonal
             rd |= 1 << (r + c);
             queensChess(board, rw, ld, rd, sol, c + 1);
-            rw ^= 1 << r;
+            rw ^= 1 << r; // set back for choose another row to place queen
             ld ^= 1 << (r - c + board.size() - 1);
             rd ^= 1 << (r + c);
         }
